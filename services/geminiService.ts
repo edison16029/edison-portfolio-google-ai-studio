@@ -1,7 +1,16 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = process.env.API_KEY || "";
+const getApiKey = () => {
+  try {
+    // Check if process and process.env exist before accessing them to avoid ReferenceErrors
+    return (typeof process !== 'undefined' && process.env && process.env.API_KEY) || "";
+  } catch (e) {
+    return "";
+  }
+};
+
+const API_KEY = getApiKey();
 
 export const sendMessageToAI = async (message: string, history: {role: 'user' | 'model', text: string}[]) => {
   if (!API_KEY) {

@@ -1,13 +1,14 @@
+
 import React, { useState } from 'react';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import AIAssistant from './components/AIAssistant';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Travel from './pages/Travel';
-import Blog from './pages/Blog';
-import BlogDetail from './pages/BlogDetail';
-import Contact from './pages/Contact';
+import Navigation from './components/Navigation.tsx';
+import Footer from './components/Footer.tsx';
+import AIAssistant from './components/AIAssistant.tsx';
+import Home from './pages/Home.tsx';
+import Projects from './pages/Projects.tsx';
+import Travel from './pages/Travel.tsx';
+import Blog from './pages/Blog.tsx';
+import BlogDetail from './pages/BlogDetail.tsx';
+import Contact from './pages/Contact.tsx';
 
 export type View = 'home' | 'projects' | 'travel' | 'blog' | 'blog-detail' | 'contact';
 
