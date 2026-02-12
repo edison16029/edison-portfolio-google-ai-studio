@@ -27,6 +27,7 @@ export interface BlogPost {
   readTime: string;
   image: string;
   category: string;
+  contentPath: string;
 }
 
 export interface Message {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { theme } from '../theme';
-import { BLOG_POSTS, BLOG_CONTENTS } from '../data';
+import { BLOG_POSTS } from '../data';
 
 interface BlogDetailProps {
   postId: string;
@@ -9,8 +9,38 @@ interface BlogDetailProps {
 }
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ postId, onBack }) => {
+  const [content, setContent] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  
   const post = BLOG_POSTS.find(p => p.id === postId);
-  const content = BLOG_CONTENTS[postId] || "# Post not found\nSorry, this post couldn't be loaded.";
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      if (!post) return;
+      
+      setLoading(true);
+      setError(null);
+      
+      try {
+        // Use relative path directly as Vite serves public folder assets relative to the root.
+        // Prepending base URL if available, but './' in vite config + relative path is usually most robust.
+        const response = await fetch(`./${post.contentPath}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const text = await response.text();
+        setContent(text);
+      } catch (err) {
+        console.error("Failed to load blog markdown:", err);
+        setError('The blog content could not be loaded. Please check the file path or try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContent();
+  }, [post]);
 
   if (!post) return null;
 
@@ -42,9 +72,33 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ postId, onBack }) => {
           </div>
         </header>
 
-        <div className="prose prose-indigo md:prose-lg">
-          <ReactMarkdown>{content}</ReactMarkdown>
-        </div>
+        {loading ? (
+          <div className="space-y-6 animate-pulse">
+            <div className="h-8 bg-gray-200 rounded-lg w-3/4"></div>
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-100 rounded w-full"></div>
+              <div className="h-4 bg-gray-100 rounded w-full"></div>
+              <div className="h-4 bg-gray-100 rounded w-5/6"></div>
+            </div>
+            <div className="h-8 bg-gray-200 rounded-lg w-1/2 mt-12"></div>
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-100 rounded w-full"></div>
+              <div className="h-4 bg-gray-100 rounded w-full"></div>
+              <div className="h-4 bg-gray-100 rounded w-2/3"></div>
+            </div>
+          </div>
+        ) : error ? (
+          <div className="p-8 bg-red-50 border border-red-100 rounded-2xl text-red-600 text-center">
+            <svg className="w-12 h-12 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p className="font-medium">{error}</p>
+          </div>
+        ) : (
+          <div className="prose prose-indigo md:prose-lg max-w-none">
+            <ReactMarkdown>{content}</ReactMarkdown>
+          </div>
+        )}
 
         <footer className="mt-20 pt-10 border-t border-gray-100">
           <div className="flex items-center gap-5">

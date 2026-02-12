@@ -189,7 +189,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Oct 28, 2024',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800',
-    category: 'Travel'
+    category: 'Travel',
+    contentPath: 'blog/honeymoon-thailand.md'
   },
   {
     id: 'b2',
@@ -198,73 +199,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Sep 28, 2023',
     readTime: '8 min read',
     image: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&q=80&w=800',
-    category: 'Lifestyle'
+    category: 'Lifestyle',
+    contentPath: 'blog/solo-travel-tips.md'
   }
 ];
-
-export const BLOG_CONTENTS: Record<string, string> = {
-  'b1': `
-# My Thailand trip
-
-After considering atleast 5 other places including Maldives, Bali and Netherlands, me and my wife finally landed on
-picking Thailand as our honeymoon destination. Both of us love relaxing trips and we felt the beaches of Thailand
-suited the best for we were looking for. We made the trip during the last week of October, as that is when the rains
-start to dry out and transition into a more tourist friendly weather.  
-
-## Itinerary
-
-Our strategy was quite straight-forward. We wanted one week trip, covering as many places as possible at a relaxed pace.
-So we decided to visit the 3 big cities/provinces - Phuket, Krabi & Bangkok. One major miss out was Chiang Mai - 
-the northern province with lots of nature and greenery. We couldn't quite fit it in the itinerary and considering we 
-were more keen on enjoying in the beaches more, we didn't want to swap out Phuket or Krabi. Another thing we intentionally
-skipped was Pattaya, as neither of us were too keen on partying.
-
-### Preparation
-Since this was our first internation trip together, both of us were really really over-prepared for the trip, trying
-to compensate for the lack of experience. We made all the ticket and hotel booking from home, made multiple copies of the ticket
-and spread them across each luggage along with our ID proofs. We exchanged Rs. 1 Lakh to Thai Bhat also before the trip.
-We packed more than 8 days worth of clothes. Like I said, we were really prepared.
-
-### Day 1 Oct 20-21, 2024 : The onward journey and Karon beach
-Carrying huge amounts of excitement, both of us set forward to catch the evening flight. We had a lay-over at Delhi 
-and reached the Phuket airport the next day morning. It was an hour and half trip from the airport to our place of stay
-at Oceanview Bungalows by EAT, which was located right next to the Karon beach. We checked-in at the hotel, freshened up
-and immediately went out to get some lunch. We were clueless where to go and walked straight into a road side hotel
-and ordered some recommended food. The lunch was actually terrible, as the dish we ordered was some prawn dish which 
-was undercooked and had too much of a raw smell. Half satisfied, we went back to the hotel and had a long nap, catching up
-some of the lost sleep during the overnight flight journey.
-
-The trip really started for us that evening when we went to the Karon beach. It was a beautiful sunset view, with lots 
-of places to sit and enjoy the evening. We captured some pictures and really felt like photographers. My wife's costume
-selection was on point as well. We got two of those beds with umbrella and chilled drinking some tender coconuts. We
-capped of the evening with a stroll along the neighborhood and found a street side shop serving beautiful Pad Thai, 
-the famous Thai dish.
- `,
-  'b2': `
-# My Solo Travel Tips
-
-Traveling alone for the first time is one of the most liberating experiences you can have. It forces you to engage with the world on your own terms.
-
-## Preparation is Key
-
-Before you go, make sure you've mapped out your "first day" strategy. The moment you land is the most vulnerable you'll be.
-
-### 1. The Offline Map
-Always download the Google Maps area for your destination. You can't always rely on roaming or local SIMs immediately.
-
-### 2. Local Etiquette
-Learn at least five phrases:
-- Hello
-- Thank you
-- Please
-- Where is the bathroom?
-- Do you speak English?
-
-### 3. The Power of Choice
-The best part about solo travel? You don't have to wait for anyone. If you want to spend 4 hours in a museum, do it. If you want to skip it for a cafe, do it.
-
-## Conclusion
-
-Travel is about curiosity. Don't check boxes. Experience the unknown.
-  `
-};
