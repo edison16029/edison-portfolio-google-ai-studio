@@ -16,30 +16,32 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ postId, onBack }) => {
   const post = BLOG_POSTS.find(p => p.id === postId);
 
   useEffect(() => {
-    const fetchContent = async () => {
-      if (!post) return;
-      
-      setLoading(true);
-      setError(null);
-      
-      try {
-        // Use relative path directly as Vite serves public folder assets relative to the root.
-        // Prepending base URL if available, but './' in vite config + relative path is usually most robust.
-        const response = await fetch(`./${post.contentPath}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+    if (!post) return;
+    
+    setLoading(true);
+    setError(null);
+    
+    /**
+     * Standard fetch is used to retrieve markdown files from the server.
+     * This avoids environment-specific macros like import.meta.glob which
+     * can fail in certain development or runtime configurations.
+     */
+    fetch(`/${post.contentPath}`)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to load blog post: ${res.statusText}`);
         }
-        const text = await response.text();
+        return res.text();
+      })
+      .then(text => {
         setContent(text);
-      } catch (err) {
-        console.error("Failed to load blog markdown:", err);
-        setError('The blog content could not be loaded. Please check the file path or try again later.');
-      } finally {
         setLoading(false);
-      }
-    };
-
-    fetchContent();
+      })
+      .catch(err => {
+        console.error('Error fetching blog content:', err);
+        setError('Blog content could not be loaded. Please ensure the file exists and the server is configured correctly.');
+        setLoading(false);
+      });
   }, [post]);
 
   if (!post) return null;
@@ -79,12 +81,6 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ postId, onBack }) => {
               <div className="h-4 bg-gray-100 rounded w-full"></div>
               <div className="h-4 bg-gray-100 rounded w-full"></div>
               <div className="h-4 bg-gray-100 rounded w-5/6"></div>
-            </div>
-            <div className="h-8 bg-gray-200 rounded-lg w-1/2 mt-12"></div>
-            <div className="space-y-3">
-              <div className="h-4 bg-gray-100 rounded w-full"></div>
-              <div className="h-4 bg-gray-100 rounded w-full"></div>
-              <div className="h-4 bg-gray-100 rounded w-2/3"></div>
             </div>
           </div>
         ) : error ? (

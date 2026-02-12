@@ -1,25 +1,15 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-const getApiKey = () => {
-  try {
-    // Check if process and process.env exist before accessing them to avoid ReferenceErrors
-    return (typeof process !== 'undefined' && process.env && process.env.API_KEY) || "";
-  } catch (e) {
-    return "";
-  }
-};
-
-const API_KEY = getApiKey();
-
+/**
+ * Sends a message to the Edison Moni portfolio assistant.
+ * Strictly follows @google/genai SDK guidelines for instantiation and property access.
+ */
 export const sendMessageToAI = async (message: string, history: {role: 'user' | 'model', text: string}[]) => {
-  if (!API_KEY) {
-    throw new Error("API Key is missing. Please ensure process.env.API_KEY is configured.");
-  }
-
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  // Always create a new GoogleGenAI instance right before making an API call.
+  // Must use a named parameter for apiKey obtained from process.env.API_KEY.
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
-  // Custom persona for the portfolio assistant
+  // Custom persona for the portfolio assistant as a system instruction
   const systemInstruction = `
     You are the personal AI assistant for Edison Moni, a Software Engineer and Backend specialist. 
     Edison's portfolio includes projects like an AI Productivity Suite, EcoTrack, and Nebula Design System.
@@ -32,6 +22,8 @@ export const sendMessageToAI = async (message: string, history: {role: 'user' | 
   `;
 
   try {
+    // Generate content using the modern ai.models.generateContent method.
+    // model name 'gemini-3-flash-preview' is used for general Q&A.
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: [
@@ -44,6 +36,7 @@ export const sendMessageToAI = async (message: string, history: {role: 'user' | 
       },
     });
 
+    // Directly access the .text property on the GenerateContentResponse object (do not call as a method).
     return response.text || "I'm sorry, I couldn't generate a response.";
   } catch (error) {
     console.error("Gemini API Error:", error);
