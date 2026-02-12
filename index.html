@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <!-- Added typography plugin to the Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+          font-family: 'Playfair Display', serif;
+        }
+      }
+
+      @layer components {
+        /* Custom overrides for the prose class to match the brand */
+        .prose {
+          @apply max-w-none text-gray-700 leading-relaxed;
+        }
+        .prose h1 { 
+          @apply text-4xl font-serif font-bold mt-12 mb-6 text-gray-900; 
+        }
+        .prose h2 { 
+          @apply text-2xl font-serif font-bold mt-10 mb-4 text-gray-800 border-b border-gray-100 pb-2; 
+        }
+        .prose h3 { 
+          @apply text-xl font-bold mt-8 mb-3 text-gray-800; 
+        }
+        .prose p { 
+          @apply mb-6 text-lg; 
+        }
+        .prose ul { 
+          @apply list-disc list-outside mb-6 ml-6 space-y-2; 
+        }
+        .prose blockquote { 
+          @apply border-l-4 border-indigo-500 pl-6 italic text-gray-700 my-8 bg-indigo-50/30 py-4 pr-4 rounded-r-xl; 
+        }
+        .prose code { 
+          @apply bg-gray-100 rounded px-1.5 py-0.5 text-indigo-600 font-mono text-sm before:content-none after:content-none; 
+        }
+        .prose pre { 
+          @apply bg-gray-900 text-gray-100 p-6 rounded-2xl overflow-x-auto my-8 shadow-lg font-mono text-sm leading-relaxed; 
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+  </body>
+</html>

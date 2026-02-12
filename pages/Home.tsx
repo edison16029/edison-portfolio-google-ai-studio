@@ -1,0 +1,135 @@
+
+import React from 'react';
+import { theme } from '../theme';
+import { View } from '../App';
+
+interface HomeProps {
+  navigateTo: (view: View) => void;
+}
+
+const Home: React.FC<HomeProps> = ({ navigateTo }) => {
+  const menuCards: { title: string; description: string; view: View; color: string }[] = [
+    { title: 'Projects', description: 'Deep dive into backend architecture', view: 'projects', color: 'indigo' },
+    { title: 'Travel', description: 'Exploring the world one port at a time', view: 'travel', color: 'rose' },
+    { title: 'Blog', description: 'Tech deep dives and life updates', view: 'blog', color: 'amber' },
+  ];
+
+  return (
+    <div className="pb-12">
+      {/* Social-media style header */}
+      <div className="relative h-64 md:h-80 bg-gray-200">
+        <img 
+          src="https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          alt="Cover" 
+          className="w-full h-full object-cover object-top"
+        />
+        <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden bg-white shadow-lg">
+            <img 
+              src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2" 
+              alt="Profile" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={`${theme.styles.container} mt-20`}>
+        <div className="text-center md:text-left md:ml-48">
+          <h1 className="text-4xl font-serif font-bold">Edison Moni</h1>
+          <p className="text-gray-500 font-medium">Software Engineer | New Parent | Sports Enthusiast</p>
+        </div>
+
+        {/* Favorite Quote */}
+        <div className="mt-12 text-center bg-white p-8 rounded-2xl border border-gray-100 shadow-sm max-w-3xl mx-auto">
+          <p className="text-xl italic text-gray-700 font-serif">
+            "The world is a book and those who do not travel read only one page."
+          </p>
+          <p className="mt-4 text-sm text-gray-400 font-medium">— St. Augustine</p>
+        </div>
+
+        {/* About Me Section */}
+        <section className="mt-16 max-w-3xl mx-auto">
+          <h2 className={theme.styles.heading}>About Me</h2>
+          <div className="mt-6 space-y-6 text-gray-600 leading-relaxed">
+            <p>
+            I’m a Software Engineer at Google, based in Bengaluru. 
+            I work mostly on backend systems — the kind of things users 
+            don’t see but definitely notice when they break. 
+            I enjoy understanding how pieces fit together and building systems that don’t need constant babysitting.
+            </p>
+            <p>
+            I’m not the “move fast and rewrite later” type. 
+            I prefer thinking things through, asking a few annoying “why” questions, 
+            and then building something that holds up. Clean code, simple design, 
+            fewer surprises — that’s usually the goal.
+            </p>
+            <p> 
+            Outside of work, I occasionally go to the gym (and consistently think about going more). 
+            I read books in bursts, tell myself I’ll read daily, and then repeat the cycle. 
+            I have done a few treks, visited few places, and have a growing list of countries I want to explore someday.
+            </p>
+            <p> 
+            Still figuring things out — in tech, in fitness, in life — but enjoying the process.  
+            </p>
+
+            <div className="pt-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">Currently, I’m split between two high-stakes worlds:</h3>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <span className="font-bold text-indigo-600 shrink-0">By day:</span>
+                  <span>Engineering the future of backend systems and getting hands-on with the latest in AI agent development. I enjoy the challenge of building autonomous agents that can navigate the same lack of "direct solutions" I face in my daily codebases.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="font-bold text-rose-500 shrink-0">By night:</span>
+                  <span>Navigating my newest (and most complex) deployment yet—being a parent to a newborn. I’ve found that debugging a distributed system and decoding a 3 AM cry require a surprisingly similar set of analytical skills.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">When I’m not architecting perfection or navigating the chaos of new parenthood, you can find me:</h3>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">🏀</span>
+                  <span>Watching the Lakers and hoping for a win.</span>
+                </li>
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">🎮</span>
+                  <span>Recalibrating with Age of Empires 4 or Valorant.</span>
+                </li>
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">📺</span>
+                  <span>Rewatching Friends (because we were on a break!).</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Menu Cards */}
+        <section className="mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {menuCards.map((card) => (
+              <button 
+                key={card.title} 
+                onClick={() => navigateTo(card.view)}
+                className={`${theme.styles.card} p-6 flex flex-col items-center text-center group active:scale-95 w-full`}
+              >
+                <div className={`w-12 h-12 bg-${card.color}-100 text-${card.color}-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">{card.title}</h3>
+                <p className="mt-2 text-sm text-gray-500">{card.description}</p>
+              </button>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
