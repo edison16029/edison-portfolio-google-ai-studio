@@ -4,13 +4,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
-    <!-- Added typography plugin to the Tailwind CDN -->
+    <title>Edison Moni | Portfolio</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style type="text/tailwindcss">
       @layer base {
         body {
+          @apply bg-gray-50 text-gray-900;
           font-family: 'Inter', sans-serif;
         }
         .font-serif {
@@ -18,51 +18,67 @@
         }
       }
 
-      @layer components {
-        /* Custom overrides for the prose class to match the brand */
-        .prose {
-          @apply max-w-none text-gray-700 leading-relaxed;
-        }
-        .prose h1 { 
-          @apply text-4xl font-serif font-bold mt-12 mb-6 text-gray-900; 
-        }
-        .prose h2 { 
-          @apply text-2xl font-serif font-bold mt-10 mb-4 text-gray-800 border-b border-gray-100 pb-2; 
-        }
-        .prose h3 { 
-          @apply text-xl font-bold mt-8 mb-3 text-gray-800; 
-        }
-        .prose p { 
-          @apply mb-6 text-lg; 
-        }
-        .prose ul { 
-          @apply list-disc list-outside mb-6 ml-6 space-y-2; 
-        }
-        .prose blockquote { 
-          @apply border-l-4 border-indigo-500 pl-6 italic text-gray-700 my-8 bg-indigo-50/30 py-4 pr-4 rounded-r-xl; 
-        }
-        .prose code { 
-          @apply bg-gray-100 rounded px-1.5 py-0.5 text-indigo-600 font-mono text-sm before:content-none after:content-none; 
-        }
-        .prose pre { 
-          @apply bg-gray-900 text-gray-100 p-6 rounded-2xl overflow-x-auto my-8 shadow-lg font-mono text-sm leading-relaxed; 
-        }
+      #protocol-warning {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: white;
+        z-index: 9999;
+        padding: 2rem;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
     "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
-    "react-markdown": "https://esm.sh/react-markdown@^9.0.0"
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
   }
 }
 </script>
 </head>
-  <body class="bg-gray-50 text-gray-900">
+  <body>
+    <!-- Helpful overlay for users who open the file directly via file:// -->
+    <div id="protocol-warning" class="font-sans">
+      <div class="max-w-md mx-auto p-8 bg-white rounded-3xl shadow-2xl border border-gray-100">
+        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <h1 class="text-2xl font-bold text-gray-900 mb-4">Local Server Required</h1>
+        <p class="text-gray-600 mb-8">
+          Modern web apps using <strong>TypeScript</strong> and <strong>React</strong> cannot be run by opening the file directly in your browser.
+        </p>
+        <div class="text-left bg-gray-900 rounded-2xl p-6 font-mono text-sm text-indigo-300 space-y-2 mb-8 shadow-inner">
+          <p><span class="text-gray-500"># 1. Open your terminal in this folder</span></p>
+          <p><span class="text-emerald-400">npm</span> install</p>
+          <p className="pt-2"><span class="text-gray-500"># 2. Start the local server</span></p>
+          <p><span class="text-emerald-400">npm</span> run dev</p>
+        </div>
+        <p class="text-sm text-gray-400">
+          Once started, the website will open at <code class="bg-gray-100 px-1 rounded">http://localhost:3000</code>
+        </p>
+      </div>
+    </div>
+
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+
+    <script type="module">
+      // Check for file protocol and show warning
+      if (window.location.protocol === 'file:') {
+        document.getElementById('protocol-warning').style.display = 'flex';
+      }
+    </script>
+    <!-- Entry point for Vite -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
