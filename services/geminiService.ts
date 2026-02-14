@@ -1,10 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
+import { Message } from "../types";
 
 /**
  * Sends a message to the Edison Moni portfolio assistant.
  * Strictly follows @google/genai SDK guidelines for instantiation and property access.
  */
-export const sendMessageToAI = async (message: string, history: {role: 'user' | 'model', text: string}[]) => {
+// Fix: Imported and used the common Message interface for the history parameter
+export const sendMessageToAI = async (message: string, history: Message[]) => {
   // Always create a new GoogleGenAI instance right before making an API call.
   // Must use a named parameter for apiKey obtained from process.env.API_KEY.
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });

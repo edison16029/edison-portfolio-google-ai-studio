@@ -30,6 +30,7 @@ export interface BlogPost {
   contentPath: string;
 }
 
+// Added missing Message interface for AI assistant history
 export interface Message {
   role: 'user' | 'model';
   text: string;

@@ -1,8 +1,6 @@
-
 import React, { useState } from 'react';
 import Navigation from './components/Navigation.tsx';
 import Footer from './components/Footer.tsx';
-import AIAssistant from './components/AIAssistant.tsx';
 import Home from './pages/Home.tsx';
 import Projects from './pages/Projects.tsx';
 import Travel from './pages/Travel.tsx';
@@ -56,7 +54,6 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
       <Footer />
-      <AIAssistant />
     </div>
   );
 };
