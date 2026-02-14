@@ -37,7 +37,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
                 className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 border-b-2 ${
                   currentView === item.view 
                     ? `text-${theme.colors.primary} border-${theme.colors.primary}` 
-                    : 'text-gray-700 border-transparent hover:text-indigo-600 hover:border-indigo-600'
+                    : `text-gray-700 border-transparent hover:text-${theme.colors.primary} hover:border-${theme.colors.primary}`
                 }`}
               >
                 {item.name}

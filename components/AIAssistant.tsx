@@ -76,7 +76,7 @@ const AIAssistant: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Type a message..."
-              className="flex-1 bg-gray-50 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+              className={`flex-1 bg-gray-50 border-none rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-${theme.colors.primary.split('-')[0]}-500 outline-none`}
             />
             <button 
               onClick={handleSend}

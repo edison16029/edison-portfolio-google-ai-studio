@@ -9,22 +9,23 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ navigateTo }) => {
   const menuCards: { title: string; description: string; view: View; color: string }[] = [
-    { title: 'Projects', description: 'Deep dive into backend architecture', view: 'projects', color: 'indigo' },
+    { title: 'Projects', description: 'Deep dive into backend architecture', view: 'projects', color: theme.colors.primary.split('-')[0] },
     { title: 'Travel', description: 'Exploring the world one port at a time', view: 'travel', color: 'rose' },
     { title: 'Blog', description: 'Tech deep dives and life updates', view: 'blog', color: 'amber' },
   ];
 
   return (
     <div className="pb-12">
-      {/* Social-media style header */}
-      <div className="relative h-64 md:h-80 bg-gray-200">
+      {/* Top-view tech workspace cover photo */}
+      <div className="relative h-64 md:h-96 bg-gray-200">
         <img 
-          src="https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          alt="Cover" 
-          className="w-full h-full object-cover object-top"
+          src="https://plus.unsplash.com/premium_photo-1661775756810-82dbd209fc95?q=80&w=1354" 
+          alt="Software Engineer Desk Top View" 
+          className="w-full h-full object-cover object-center"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
         <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden bg-white shadow-lg">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
             <img 
               src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2" 
               alt="Profile" 
@@ -77,7 +78,7 @@ const Home: React.FC<HomeProps> = ({ navigateTo }) => {
               <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">Currently, I’m split between two high-stakes worlds:</h3>
               <ul className="space-y-4">
                 <li className="flex gap-3">
-                  <span className="font-bold text-indigo-600 shrink-0">By day:</span>
+                  <span className={`font-bold text-${theme.colors.primary} shrink-0`}>By day:</span>
                   <span>Engineering the future of backend systems and getting hands-on with the latest in AI agent development. I enjoy the challenge of building autonomous agents that can navigate the same lack of "direct solutions" I face in my daily codebases.</span>
                 </li>
                 <li className="flex gap-3">

@@ -1,8 +1,8 @@
 
 export const theme = {
   colors: {
-    primary: 'indigo-600',
-    primaryHover: 'indigo-700',
+    primary: 'blue-400',
+    primaryHover: 'blue-500',
     accent: 'rose-500',
     bg: 'gray-50',
     card: 'white',

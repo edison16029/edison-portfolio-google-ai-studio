@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
             
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className={`w-10 h-10 bg-${theme.colors.primary.split('-')[0]}-50 text-${theme.colors.primary} rounded-full flex items-center justify-center flex-shrink-0`}>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
                     required
                     value={formState.name}
                     onChange={(e) => setFormState({...formState, name: e.target.value})}
-                    className="w-full bg-gray-50 border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition-all" 
+                    className={`w-full bg-gray-50 border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-${theme.colors.primary.split('-')[0]}-500 focus:bg-white outline-none transition-all`} 
                     placeholder="Your name"
                   />
                 </div>
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
                     required
                     value={formState.email}
                     onChange={(e) => setFormState({...formState, email: e.target.value})}
-                    className="w-full bg-gray-50 border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition-all" 
+                    className={`w-full bg-gray-50 border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-${theme.colors.primary.split('-')[0]}-500 focus:bg-white outline-none transition-all`} 
                     placeholder="you@example.com"
                   />
                 </div>
@@ -96,13 +96,13 @@ const Contact: React.FC = () => {
                     required
                     value={formState.message}
                     onChange={(e) => setFormState({...formState, message: e.target.value})}
-                    className="w-full bg-gray-50 border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white outline-none transition-all resize-none" 
+                    className={`w-full bg-gray-50 border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-${theme.colors.primary.split('-')[0]}-500 focus:bg-white outline-none transition-all resize-none`} 
                     placeholder="What's on your mind?"
                   />
                 </div>
                 <button 
                   type="submit"
-                  className={`w-full py-4 bg-${theme.colors.primary} text-white font-bold rounded-xl shadow-lg hover:shadow-indigo-200 hover:-translate-y-0.5 transition-all active:translate-y-0`}
+                  className={`w-full py-4 bg-${theme.colors.primary} text-white font-bold rounded-xl shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 transition-all active:translate-y-0`}
                 >
                   Send Message
                 </button>
