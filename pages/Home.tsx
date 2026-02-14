@@ -16,16 +16,16 @@ const Home: React.FC<HomeProps> = ({ navigateTo }) => {
 
   return (
     <div className="pb-12">
-      {/* Top-view tech workspace cover photo */}
-      <div className="relative h-64 md:h-96 bg-gray-200">
+      {/* Top-view tech workspace cover photo - Height reduced for better visibility */}
+      <div className="relative h-48 md:h-64 bg-gray-200">
         <img 
           src="https://plus.unsplash.com/premium_photo-1661775756810-82dbd209fc95?q=80&w=1354" 
           alt="Software Engineer Desk Top View" 
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
-        <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
+        <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
             <img 
               src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2" 
               alt="Profile" 
@@ -35,22 +35,22 @@ const Home: React.FC<HomeProps> = ({ navigateTo }) => {
         </div>
       </div>
 
-      <div className={`${theme.styles.container} mt-20`}>
-        <div className="text-center md:text-left md:ml-48">
-          <h1 className="text-4xl font-serif font-bold">Edison Moni</h1>
-          <p className="text-gray-500 font-medium">Software Engineer | New Parent | Sports Enthusiast</p>
+      <div className={`${theme.styles.container} mt-16`}>
+        <div className="text-center md:text-left md:ml-40">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold">Edison Moni</h1>
+          <p className="text-gray-500 font-medium text-sm md:text-base">Software Engineer | Sports Enthusiast</p>
         </div>
 
-        {/* Favorite Quote */}
-        <div className="mt-12 text-center bg-white p-8 rounded-2xl border border-gray-100 shadow-sm max-w-3xl mx-auto">
-          <p className="text-xl italic text-gray-700 font-serif">
+        {/* Favorite Quote - Now more likely to be visible above the fold */}
+        <div className="mt-8 text-center bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl italic text-gray-700 font-serif">
             "The world is a book and those who do not travel read only one page."
           </p>
-          <p className="mt-4 text-sm text-gray-400 font-medium">— St. Augustine</p>
+          <p className="mt-3 text-xs md:text-sm text-gray-400 font-medium uppercase tracking-widest">— St. Augustine</p>
         </div>
 
         {/* About Me Section */}
-        <section className="mt-16 max-w-3xl mx-auto">
+        <section className="mt-12 md:mt-16 max-w-3xl mx-auto">
           <h2 className={theme.styles.heading}>About Me</h2>
           <div className="mt-6 space-y-6 text-gray-600 leading-relaxed">
             <p>
