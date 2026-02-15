@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
       <header className="mb-16 text-center md:text-left">
         <h1 className={theme.styles.heading + " text-4xl md:text-5xl"}>Edison's Journal</h1>
         <p className="mt-4 text-gray-500 text-lg max-w-2xl">
-          Thoughts on backend engineering, the philosophy of code, and chronicles from my global explorations.
+          Thoughts on software engineering, invasion of AI, fitness & lifstyle, and chronicles from my global explorations.
         </p>
       </header>
 

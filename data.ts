@@ -183,10 +183,10 @@ export const TRAVEL_DATA: TravelEntry[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: 'b1',
-    title: 'Phuket, Krabi & Bangkok: An October Escape to Thailand',
+    id: 'thailand-trip-2024',
+    title: 'An October Escape to Thailand',
     excerpt: 'A personal chronicle of our unforgettable honeymoon journey through Phuket, Krabi, and Bangkok in October 2024.',
-    date: 'Oct 28, 2024',
+    date: 'Feb 10, 2026',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800',
     category: 'Travel',

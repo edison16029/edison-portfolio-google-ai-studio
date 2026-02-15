@@ -73,6 +73,13 @@
 
     <div id="root"></div>
 
+    <!-- Hidden form for Netlify detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
     <script type="module">
       // Check for file protocol and show warning
       if (window.location.protocol === 'file:') {
