@@ -10,9 +10,22 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} Edison Moni. Built with React.
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-indigo-600">Twitter</a>
-            <a href="#" className="text-gray-400 hover:text-indigo-600">LinkedIn</a>
-            <a href="#" className="text-gray-400 hover:text-indigo-600">GitHub</a>
+            <a 
+              href="https://www.linkedin.com/in/edison-moni/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-indigo-600 transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a 
+              href="https://github.com/edison16029" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-indigo-600 transition-colors"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </div>

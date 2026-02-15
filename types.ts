@@ -29,9 +29,3 @@ export interface BlogPost {
   category: string;
   contentPath: string;
 }
-
-// Added missing Message interface for AI assistant history
-export interface Message {
-  role: 'user' | 'model';
-  text: string;
-}

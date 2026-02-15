@@ -1,22 +1,41 @@
-
 import React from 'react';
 import { theme } from '../theme';
 import { View } from '../App';
+import { FEATURES } from '../config';
 
 interface HomeProps {
   navigateTo: (view: View) => void;
 }
 
 const Home: React.FC<HomeProps> = ({ navigateTo }) => {
-  const menuCards: { title: string; description: string; view: View; color: string }[] = [
-    { title: 'Projects', description: 'Deep dive into backend architecture', view: 'projects', color: theme.colors.primary.split('-')[0] },
-    { title: 'Travel', description: 'Exploring the world one port at a time', view: 'travel', color: 'rose' },
-    { title: 'Blog', description: 'Tech deep dives and life updates', view: 'blog', color: 'amber' },
-  ];
+  // Filter menu cards based on feature flags
+  const menuCards = [
+    { 
+      title: 'Projects', 
+      description: 'Deep dive into backend architecture', 
+      view: 'projects' as View, 
+      color: theme.colors.primary.split('-')[0],
+      enabled: FEATURES.projects 
+    },
+    { 
+      title: 'Travel', 
+      description: 'Exploring the world one port at a time', 
+      view: 'travel' as View, 
+      color: 'rose',
+      enabled: FEATURES.travel 
+    },
+    { 
+      title: 'Blog', 
+      description: 'Tech deep dives and life updates', 
+      view: 'blog' as View, 
+      color: 'amber',
+      enabled: FEATURES.blog 
+    },
+  ].filter(card => card.enabled);
 
   return (
     <div className="pb-12">
-      {/* Top-view tech workspace cover photo - Height reduced for better visibility */}
+      {/* Top-view tech workspace cover photo */}
       <div className="relative h-48 md:h-64 bg-gray-200">
         <img 
           src="https://plus.unsplash.com/premium_photo-1661775756810-82dbd209fc95?q=80&w=1354" 
@@ -41,7 +60,7 @@ const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           <p className="text-gray-500 font-medium text-sm md:text-base">Software Engineer | Sports Enthusiast</p>
         </div>
 
-        {/* Favorite Quote - Now more likely to be visible above the fold */}
+        {/* Favorite Quote */}
         <div className="mt-8 text-center bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm max-w-3xl mx-auto">
           <p className="text-lg md:text-xl italic text-gray-700 font-serif">
             "The world is a book and those who do not travel read only one page."
@@ -109,25 +128,27 @@ const Home: React.FC<HomeProps> = ({ navigateTo }) => {
         </section>
 
         {/* Menu Cards */}
-        <section className="mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {menuCards.map((card) => (
-              <button 
-                key={card.title} 
-                onClick={() => navigateTo(card.view)}
-                className={`${theme.styles.card} p-6 flex flex-col items-center text-center group active:scale-95 w-full`}
-              >
-                <div className={`w-12 h-12 bg-${card.color}-100 text-${card.color}-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">{card.title}</h3>
-                <p className="mt-2 text-sm text-gray-500">{card.description}</p>
-              </button>
-            ))}
-          </div>
-        </section>
+        {menuCards.length > 0 && (
+          <section className="mt-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {menuCards.map((card) => (
+                <button 
+                  key={card.title} 
+                  onClick={() => navigateTo(card.view)}
+                  className={`${theme.styles.card} p-6 flex flex-col items-center text-center group active:scale-95 w-full`}
+                >
+                  <div className={`w-12 h-12 bg-${card.color}-100 text-${card.color}-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{card.title}</h3>
+                  <p className="mt-2 text-sm text-gray-500">{card.description}</p>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

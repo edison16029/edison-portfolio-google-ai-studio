@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { theme } from '../theme';
 
@@ -35,7 +34,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-sm font-bold text-gray-900">Email</div>
-                  <div className="text-gray-500">hello@edisonmoni.dev</div>
+                  <div className="text-gray-500">edison16029@gmail.com</div>
                 </div>
               </div>
               
@@ -48,7 +47,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-sm font-bold text-gray-900">Location</div>
-                  <div className="text-gray-500">San Francisco, CA</div>
+                  <div className="text-gray-500">Bengaluru | Chennai, India</div>
                 </div>
               </div>
             </div>

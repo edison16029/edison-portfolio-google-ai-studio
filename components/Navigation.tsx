@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { theme } from '../theme';
 import { View } from '../App';
+import { FEATURES } from '../config';
 
 interface NavigationProps {
   currentView: View;
@@ -11,13 +11,14 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems: { name: string; view: View }[] = [
-    { name: 'Home', view: 'home' },
-    { name: 'Projects', view: 'projects' },
-    { name: 'Travel', view: 'travel' },
-    { name: 'Blog', view: 'blog' },
-    { name: 'Contact', view: 'contact' },
-  ];
+  // Define navigation items with their respective feature flag checks
+  const navItems = [
+    { name: 'Home', view: 'home' as View, enabled: true },
+    { name: 'Projects', view: 'projects' as View, enabled: FEATURES.projects },
+    { name: 'Travel', view: 'travel' as View, enabled: FEATURES.travel },
+    { name: 'Blog', view: 'blog' as View, enabled: FEATURES.blog },
+    { name: 'Contact', view: 'contact' as View, enabled: FEATURES.contact },
+  ].filter(item => item.enabled);
 
   const handleNavigate = (view: View) => {
     onNavigate(view);
@@ -44,7 +45,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
                 key={item.name}
                 onClick={() => handleNavigate(item.view)}
                 className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 border-b-2 ${
-                  currentView === item.view 
+                  currentView === item.view || (currentView === 'blog-detail' && item.view === 'blog')
                     ? `text-${theme.colors.primary} border-${theme.colors.primary}` 
                     : `text-gray-700 border-transparent hover:text-${theme.colors.primary} hover:border-${theme.colors.primary}`
                 }`}
@@ -84,7 +85,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
                 key={item.name}
                 onClick={() => handleNavigate(item.view)}
                 className={`block w-full text-left px-3 py-3 rounded-xl text-base font-medium transition-colors ${
-                  currentView === item.view 
+                  currentView === item.view || (currentView === 'blog-detail' && item.view === 'blog')
                     ? `bg-gray-50 text-${theme.colors.primary}` 
                     : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
                 }`}

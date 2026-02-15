@@ -7,6 +7,7 @@ import Travel from './pages/Travel.tsx';
 import Blog from './pages/Blog.tsx';
 import BlogDetail from './pages/BlogDetail.tsx';
 import Contact from './pages/Contact.tsx';
+import { FEATURES } from './config';
 
 export type View = 'home' | 'projects' | 'travel' | 'blog' | 'blog-detail' | 'contact';
 
@@ -15,11 +16,19 @@ const App: React.FC = () => {
   const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
 
   const navigateTo = (view: View) => {
+    // If the view is linked to a feature that is disabled, redirect to home
+    if (view === 'projects' && !FEATURES.projects) return setCurrentView('home');
+    if (view === 'travel' && !FEATURES.travel) return setCurrentView('home');
+    if (view === 'blog' && !FEATURES.blog) return setCurrentView('home');
+    if (view === 'blog-detail' && !FEATURES.blog) return setCurrentView('home');
+    if (view === 'contact' && !FEATURES.contact) return setCurrentView('home');
+
     setCurrentView(view);
     window.scrollTo(0, 0);
   };
 
   const handleSelectPost = (id: string) => {
+    if (!FEATURES.blog) return;
     setSelectedPostId(id);
     navigateTo('blog-detail');
   };
@@ -29,19 +38,19 @@ const App: React.FC = () => {
       case 'home':
         return <Home navigateTo={navigateTo} />;
       case 'projects':
-        return <Projects />;
+        return FEATURES.projects ? <Projects /> : <Home navigateTo={navigateTo} />;
       case 'travel':
-        return <Travel />;
+        return FEATURES.travel ? <Travel /> : <Home navigateTo={navigateTo} />;
       case 'blog':
-        return <Blog onSelectPost={handleSelectPost} />;
+        return FEATURES.blog ? <Blog onSelectPost={handleSelectPost} /> : <Home navigateTo={navigateTo} />;
       case 'blog-detail':
-        return selectedPostId ? (
+        return FEATURES.blog && selectedPostId ? (
           <BlogDetail postId={selectedPostId} onBack={() => navigateTo('blog')} />
         ) : (
-          <Blog onSelectPost={handleSelectPost} />
+          <Home navigateTo={navigateTo} />
         );
       case 'contact':
-        return <Contact />;
+        return FEATURES.contact ? <Contact /> : <Home navigateTo={navigateTo} />;
       default:
         return <Home navigateTo={navigateTo} />;
     }
