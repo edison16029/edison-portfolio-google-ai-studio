@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useParams, Link } from 'react-router-dom';
 import { theme } from '../theme';
 import { BLOG_POSTS } from '../data';
 
-interface BlogDetailProps {
-  postId: string;
-  onBack: () => void;
-}
-
-const BlogDetail: React.FC<BlogDetailProps> = ({ postId, onBack }) => {
+const BlogDetail: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   
-  const post = BLOG_POSTS.find(p => p.id === postId);
+  const post = BLOG_POSTS.find(p => p.id === id);
 
   useEffect(() => {
-    if (!post) return;
+    if (!post) {
+        setLoading(false);
+        return;
+    }
     
     setLoading(true);
     setError(null);
     
     /**
      * Standard fetch is used to retrieve markdown files from the server.
-     * This avoids environment-specific macros like import.meta.glob which
-     * can fail in certain development or runtime configurations.
+     * We use a relative path (no leading slash) to ensure it works
+     * regardless of whether the app is hosted at the root or a subdirectory.
      */
-    fetch(`/${post.contentPath}`)
+    fetch(post.contentPath)
       .then(res => {
         if (!res.ok) {
           throw new Error(`Failed to load blog post: ${res.statusText}`);
@@ -44,19 +44,28 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ postId, onBack }) => {
       });
   }, [post]);
 
+  if (!post && !loading) {
+      return (
+        <div className={theme.styles.container + " py-12 text-center"}>
+            <h2 className="text-2xl font-bold text-gray-900">Post not found</h2>
+            <Link to="/blog" className="text-indigo-600 hover:underline mt-4 inline-block">Return to Blog</Link>
+        </div>
+      );
+  }
+  
   if (!post) return null;
 
   return (
     <div className={theme.styles.container + " py-12"}>
-      <button 
-        onClick={onBack}
-        className="mb-8 flex items-center text-indigo-600 font-bold hover:translate-x-1 transition-transform group"
+      <Link 
+        to="/blog"
+        className="mb-8 flex items-center text-indigo-600 font-bold hover:translate-x-1 transition-transform group w-fit"
       >
         <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         Back to Journal
-      </button>
+      </Link>
 
       <article className="max-w-3xl mx-auto">
         <header className="mb-12">

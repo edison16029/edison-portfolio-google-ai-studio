@@ -1,12 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { theme } from '../theme';
 import { BLOG_POSTS } from '../data';
 
-interface BlogProps {
-  onSelectPost: (id: string) => void;
-}
+const Blog: React.FC = () => {
+  const navigate = useNavigate();
 
-const Blog: React.FC<BlogProps> = ({ onSelectPost }) => {
   return (
     <div className={theme.styles.container + " py-16"}>
       <header className="mb-16 text-center md:text-left">
@@ -21,7 +20,7 @@ const Blog: React.FC<BlogProps> = ({ onSelectPost }) => {
           <article 
             key={post.id} 
             className="group cursor-pointer bg-white rounded-[2.5rem] p-5 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-            onClick={() => onSelectPost(post.id)}
+            onClick={() => navigate(`/blog/${post.id}`)}
           >
             <div className="aspect-[16/10] overflow-hidden rounded-[1.8rem] mb-8 shadow-sm">
               <img 

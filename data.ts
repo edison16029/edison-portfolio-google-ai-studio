@@ -184,7 +184,7 @@ export const TRAVEL_DATA: TravelEntry[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'b1',
-    title: 'Honeymoon in Thailand',
+    title: 'Phuket, Krabi & Bangkok: An October Escape to Thailand',
     excerpt: 'A personal chronicle of our unforgettable honeymoon journey through Phuket, Krabi, and Bangkok in October 2024.',
     date: 'Oct 28, 2024',
     readTime: '6 min read',

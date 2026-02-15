@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
@@ -9,58 +10,43 @@ import BlogDetail from './pages/BlogDetail.tsx';
 import Contact from './pages/Contact.tsx';
 import { FEATURES } from './config';
 
-export type View = 'home' | 'projects' | 'travel' | 'blog' | 'blog-detail' | 'contact';
-
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>('home');
-  const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
-
-  const navigateTo = (view: View) => {
-    // If the view is linked to a feature that is disabled, redirect to home
-    if (view === 'projects' && !FEATURES.projects) return setCurrentView('home');
-    if (view === 'travel' && !FEATURES.travel) return setCurrentView('home');
-    if (view === 'blog' && !FEATURES.blog) return setCurrentView('home');
-    if (view === 'blog-detail' && !FEATURES.blog) return setCurrentView('home');
-    if (view === 'contact' && !FEATURES.contact) return setCurrentView('home');
-
-    setCurrentView(view);
-    window.scrollTo(0, 0);
-  };
-
-  const handleSelectPost = (id: string) => {
-    if (!FEATURES.blog) return;
-    setSelectedPostId(id);
-    navigateTo('blog-detail');
-  };
-
-  const renderContent = () => {
-    switch (currentView) {
-      case 'home':
-        return <Home navigateTo={navigateTo} />;
-      case 'projects':
-        return FEATURES.projects ? <Projects /> : <Home navigateTo={navigateTo} />;
-      case 'travel':
-        return FEATURES.travel ? <Travel /> : <Home navigateTo={navigateTo} />;
-      case 'blog':
-        return FEATURES.blog ? <Blog onSelectPost={handleSelectPost} /> : <Home navigateTo={navigateTo} />;
-      case 'blog-detail':
-        return FEATURES.blog && selectedPostId ? (
-          <BlogDetail postId={selectedPostId} onBack={() => navigateTo('blog')} />
-        ) : (
-          <Home navigateTo={navigateTo} />
-        );
-      case 'contact':
-        return FEATURES.contact ? <Contact /> : <Home navigateTo={navigateTo} />;
-      default:
-        return <Home navigateTo={navigateTo} />;
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation currentView={currentView === 'blog-detail' ? 'blog' : currentView} onNavigate={navigateTo} />
+      <Navigation />
       <main className="flex-grow">
-        {renderContent()}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+          {FEATURES.projects ? (
+            <Route path="/projects" element={<Projects />} />
+          ) : (
+            <Route path="/projects" element={<Navigate to="/" replace />} />
+          )}
+
+          {FEATURES.travel ? (
+            <Route path="/travel" element={<Travel />} />
+          ) : (
+            <Route path="/travel" element={<Navigate to="/" replace />} />
+          )}
+
+          {FEATURES.blog && (
+            <>
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogDetail />} />
+            </>
+          )}
+          {!FEATURES.blog && <Route path="/blog/*" element={<Navigate to="/" replace />} />}
+
+          {FEATURES.contact ? (
+            <Route path="/contact" element={<Contact />} />
+          ) : (
+            <Route path="/contact" element={<Navigate to="/" replace />} />
+          )}
+          
+          {/* Catch all redirect to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
       <Footer />
     </div>

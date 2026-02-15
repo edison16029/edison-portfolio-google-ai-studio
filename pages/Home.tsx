@@ -1,33 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { theme } from '../theme';
-import { View } from '../App';
 import { FEATURES } from '../config';
 
-interface HomeProps {
-  navigateTo: (view: View) => void;
-}
+const Home: React.FC = () => {
+  const navigate = useNavigate();
 
-const Home: React.FC<HomeProps> = ({ navigateTo }) => {
   // Filter menu cards based on feature flags
   const menuCards = [
     { 
       title: 'Projects', 
       description: 'Deep dive into backend architecture', 
-      view: 'projects' as View, 
+      path: '/projects', 
       color: theme.colors.primary.split('-')[0],
       enabled: FEATURES.projects 
     },
     { 
       title: 'Travel', 
       description: 'Exploring the world one port at a time', 
-      view: 'travel' as View, 
+      path: '/travel', 
       color: 'rose',
       enabled: FEATURES.travel 
     },
     { 
       title: 'Blog', 
       description: 'Tech deep dives and life updates', 
-      view: 'blog' as View, 
+      path: '/blog', 
       color: 'amber',
       enabled: FEATURES.blog 
     },
@@ -134,7 +132,7 @@ const Home: React.FC<HomeProps> = ({ navigateTo }) => {
               {menuCards.map((card) => (
                 <button 
                   key={card.title} 
-                  onClick={() => navigateTo(card.view)}
+                  onClick={() => navigate(card.path)}
                   className={`${theme.styles.card} p-6 flex flex-col items-center text-center group active:scale-95 w-full`}
                 >
                   <div className={`w-12 h-12 bg-${card.color}-100 text-${card.color}-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>

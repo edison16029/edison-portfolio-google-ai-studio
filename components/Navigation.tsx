@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { theme } from '../theme';
-import { View } from '../App';
 import { FEATURES } from '../config';
 
-interface NavigationProps {
-  currentView: View;
-  onNavigate: (view: View) => void;
-}
-
-const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
+const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   // Define navigation items with their respective feature flag checks
   const navItems = [
-    { name: 'Home', view: 'home' as View, enabled: true },
-    { name: 'Projects', view: 'projects' as View, enabled: FEATURES.projects },
-    { name: 'Travel', view: 'travel' as View, enabled: FEATURES.travel },
-    { name: 'Blog', view: 'blog' as View, enabled: FEATURES.blog },
-    { name: 'Contact', view: 'contact' as View, enabled: FEATURES.contact },
+    { name: 'Home', path: '/', enabled: true },
+    { name: 'Projects', path: '/projects', enabled: FEATURES.projects },
+    { name: 'Travel', path: '/travel', enabled: FEATURES.travel },
+    { name: 'Blog', path: '/blog', enabled: FEATURES.blog },
+    { name: 'Contact', path: '/contact', enabled: FEATURES.contact },
   ].filter(item => item.enabled);
 
-  const handleNavigate = (view: View) => {
-    onNavigate(view);
-    setIsMobileMenuOpen(false);
+  const checkActive = (path: string) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
   };
 
   return (
@@ -30,29 +27,33 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
       <div className={theme.styles.container}>
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <button 
-              onClick={() => handleNavigate('home')}
+            <Link 
+              to="/"
               className={`text-xl font-serif font-bold text-${theme.colors.primary}`}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               EDISON MONI
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavigate(item.view)}
-                className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 border-b-2 ${
-                  currentView === item.view || (currentView === 'blog-detail' && item.view === 'blog')
-                    ? `text-${theme.colors.primary} border-${theme.colors.primary}` 
-                    : `text-gray-700 border-transparent hover:text-${theme.colors.primary} hover:border-${theme.colors.primary}`
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = checkActive(item.path);
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 border-b-2 ${
+                    isActive
+                      ? `text-${theme.colors.primary} border-${theme.colors.primary}` 
+                      : `text-gray-700 border-transparent hover:text-${theme.colors.primary} hover:border-${theme.colors.primary}`
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,19 +81,23 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
       {isMobileMenuOpen && (
         <div className="sm:hidden bg-white border-t border-gray-100 animate-in slide-in-from-top duration-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavigate(item.view)}
-                className={`block w-full text-left px-3 py-3 rounded-xl text-base font-medium transition-colors ${
-                  currentView === item.view || (currentView === 'blog-detail' && item.view === 'blog')
-                    ? `bg-gray-50 text-${theme.colors.primary}` 
-                    : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = checkActive(item.path);
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full text-left px-3 py-3 rounded-xl text-base font-medium transition-colors ${
+                    isActive
+                      ? `bg-gray-50 text-${theme.colors.primary}` 
+                      : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
