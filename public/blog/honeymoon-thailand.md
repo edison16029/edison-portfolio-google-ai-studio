@@ -1,40 +1,52 @@
-After considering atleast 5 other places including Maldives, Bali and Netherlands, me and my wife finally landed on picking Thailand as our honeymoon destination. Both of us love relaxing trips and we felt the beaches of Thailand suited the best for we were looking for. We made the trip during the last week of October, as that is when the rains start to dry out and transition into a more tourist friendly weather.  
+After considering at least 5 other places including Maldives, Bali and Netherlands, my wife and I finally landed on picking Thailand as our honeymoon destination. Both of us love relaxing trips and we felt the beaches of Thailand suited what we were looking for best. We made the trip during the last week of October, as that is when the rains start to dry out and transition into more tourist friendly weather.  
 
 ## Itinerary
 
-Our strategy was quite straight-forward. We wanted one week trip, covering as many places as possible at a relaxed pace. So we decided to visit the 3 big cities/provinces - Phuket, Krabi & Bangkok. One major miss out was Chiang Mai - the northern province with lots of nature and greenery. We couldn't quite fit it in the itinerary and considering we were more keen on enjoying in the beaches more, we didn't want to swap out Phuket or Krabi. Another thing we intentionally skipped was Pattaya, as neither of us were too keen on partying.
+Our strategy was quite straight-forward. We wanted a one week trip, covering as many places as possible at a relaxed pace. So we decided to visit the 3 big cities/provinces - Phuket, Krabi & Bangkok. One major miss was Chiang Mai - the northern province with lots of nature and greenery. We couldn't quite fit it in the itinerary and considering we were keen on enjoying the beaches more, we didn't want to swap out Phuket or Krabi. Another thing we intentionally skipped was Pattaya, as neither of us were too keen on partying.
 
 ### Preparation
-Since this was our first internation trip together, both of us were really really over-prepared for the trip, trying to compensate for the lack of experience. We made all the ticket and hotel booking from home, made multiple copies of the ticket and spread them across each luggage along with our ID proofs. We exchanged Rs. 1 Lakh to Thai Bhat also before the trip. We packed more than 8 days worth of clothes. Like I said, we were really prepared.
+Since this was our first international trip together, both of us were really really over-prepared for the trip, trying to compensate for the lack of experience. We made all the ticket and hotel bookings from home, made multiple copies of the tickets and spread them across our luggage along with our ID proofs. We exchanged Rs. 1 Lakh for Thai Baht also before the trip. We packed more than 8 days worth of clothes. Like I said, we were really prepared.
 
 ### Day 1 : The Onward Journey and Karon Beach
-Carrying huge amounts of excitement, both of us set forward to catch the evening flight. We had a lay-over at Delhi and reached the Phuket airport the next day morning. It was an hour and half trip from the airport to our place of stay at Oceanview Bungalows by EAT, which was located right next to the Karon beach. We checked-in at the hotel, freshened up and immediately went out to get some lunch. We were clueless where to go and walked straight into a road side hotel and ordered some recommended food. The lunch was actually terrible, as the dish we ordered was some prawn dish which was undercooked and had too much of a raw smell. Half satisfied, we went back to the hotel and had a long nap, catching up some of the lost sleep during the overnight flight journey.
+Carrying huge amounts of excitement, both of us set off to catch the evening flight. We had a lay-over at Delhi and reached the Phuket airport the next day morning. It was an hour and half trip from the airport to our place of stay at Oceanview Bungalows by EAT, which was located right next to the Karon beach. We checked-in at the hotel, freshened up and immediately went out to get some lunch. We were clueless where to go and walked straight into a road side hotel and ordered some recommended food. The lunch was actually terrible, as the dish we ordered was some prawn dish which was undercooked and had too much of a raw smell. Half satisfied, we went back to the hotel and had a long nap, catching up on some of the lost sleep during the overnight flight journey.
 
-The trip really started for us that evening when we went to the Karon beach. It was a beautiful sunset view, with lots of places to sit and enjoy the evening. We captured some pictures and really felt like photographers. My wife's costume selection was on point as well. We got two of those beds with umbrella and chilled drinking some tender coconuts. We capped of the evening with a stroll along the neighborhood and found a street side shop serving beautiful Pad Thai, the famous Thai dish.
+The trip really started for us that evening when we went to the Karon Beach. It was a beautiful sunset view, with lots of places to sit and enjoy the evening. We captured some pictures and really felt like photographers. My wife's costume selection was on point as well. We got two of those beds with umbrellas and chilled drinking some tender coconuts. We capped off the evening with a stroll along the neighborhood and found a street side shop serving beautiful Pad Thai, the famous Thai dish.
 
 ### Day 2 : Buddhist Temples and View Points
-After finishing a sumptuous breakfast at the hotel, we rented a cab for the day. Our initial plan was to visit the famous Big Buddha statue, but unfortunately entry was closed for the day. We did however catch a glimse of the status from far away as we were traveling along the road.
+After finishing a sumptuous breakfast at the hotel, we rented a cab for the day. Our initial plan was to visit the famous Big Buddha statue, but unfortunately entry was closed for the day. We did however catch a glimpse of the statue from far away as we were traveling along the road.
 
-We then visted the Wat Chalong, the famous Buddhist temple in Phuket which is said to house a fragment of Buddha's bone. We didn't quite enjoy the visit though as the weather was quite hot and we were sweating crazy. We then traveled to the Karon Beach View Point for some fancy pictures and eye pleasing view of the beach.
+We then visited the Wat Chalong, the famous Buddhist temple in Phuket which is said to house a fragment of Buddha's bone. We didn't quite enjoy the visit though as the weather was quite hot and we were sweating like crazy. We then traveled to the Karon Beach Viewpoint for some fancy pictures and eye pleasing view of the beach.
 
-We spent the evening much like the previous day, chilling on the Karon beach enjoying the sunset and also having Pad Thai from the same street side hotel as before. We also experienced a couple Thai massage, which was really relaxing. 
+We spent the evening much like the previous day, chilling on the Karon beach enjoying the sunset and also having Pad Thai from the same street side hotel as before. We also experienced a couple's Thai massage, which was really relaxing. 
 
-### Day 3 : Phi Phi islands & Ferry travel
-It was time for us to leave Phuket and travel to our next place of stay in Krabi. Initially, we had considered having a night stay in Phi Phi island, but we felt it would be too much packing and checking-in. So we decided to travel through Phi Phi islands on our way to Krabi. We got a ferry which would allow us to explore the Phi Phi island for 4 hours before taking us to Krabi.
+### Day 3 : Phi Phi Islands & Ferry travel
+It was time for us to leave Phuket and travel to our next place of stay in Krabi. Initially, we had considered having a night stay in Phi Phi Island, but we felt it would be too much packing and checking-in. So we decided to travel through Phi Phi islands on our way to Krabi. We got a ferry which would allow us to explore the Phi Phi island for 4 hours before taking us to Krabi.
 
 Like yesterday, the weather was quite hot. That however, did not deter us from walking around the entire Phi Phi island. We were roaming along the coast by foot, taking pictures, grabbing some road side food and just enjoying the view. 
 
-We then reached Krabi by another Ferry travel and checked-in at Amorn Mansion. The location was right in the middle of a buzzing road, not very far from the Ao Nang beach shore.
+We then reached Krabi by another Ferry ride and checked-in at Amorn Mansion. The location was right in the middle of a buzzing road, not very far from the Ao Nang beach shore.
 
 ### Day 4 : Island Hopping, Phra Nang Cave & Snorkelling
-Easily, the most exhaustive and adventurous day of the trip. We found a package for 4 island trip and decided to give it shot. We were picked up from our hotel in the morning to join the group.
+Easily, the most exhaustive and adventurous day of the trip. We found a package for 4 island trip and decided to give it a shot. We were picked up from our hotel in the morning to join the group.
 
-It was like a regular boating trip until they dropped us off in the first island. Though we weren't fully prepared to swim, we couldn't resist getting in the cryster clear water and jumped in. The water was only 1-2 feet deep and we could see the floor clearly. After 20-30 minutes of fun in the water, we snacked at a small shop serving tender coconut and drinks within the island.
+It was like a regular boating trip until they dropped us off in the first island. Though we weren't fully prepared to swim, we couldn't resist getting in the crystal clear water and jumped in. The water was only 1-2 feet deep and we could see the floor clearly. After 20-30 minutes of fun in the water, we snacked at a small shop serving tender coconut and drinks within the island.
 
-We were then taken to a coral location for Snorkelling. However, the guide for some reason strongly recommended us against jumping into the water, citing that the winds were too strong and it was risky to dive in. Out of 20-30 people in the boat, only a UK couple decided to jump off anyway with the Snorkelling gear. Eventually I couldn't resist and jumped in to snorkel. The coral reefs weren't exactly amazing, but I saw some huge fishes swiming nearby almost at touching distance. Turns out, only one more person jumped after me and the remaining people stayed on the boat. 
+We were then taken to a coral location for snorkelling. However, the guide for some reason strongly recommended us against jumping into the water, citing that the winds were too strong and it was risky to dive in. Out of 20-30 people in the boat, only a UK couple decided to jump off anyway with the Snorkelling gear. Eventually I couldn't resist and jumped in to snorkel. The coral reefs weren't exactly amazing, but I saw some huge fish swimming nearby almost at touching distance. Turns out, only one more person jumped after me and the remaining people stayed on the boat. 
 
-Finally, we had lunch at a island planned by the organisers and returned to our hotel in the evening. We spent the evening hunting for Pad Thai and Fried rice with Mango.
+Finally, we had lunch at an island planned by the organisers and returned to our hotel in the evening. We spent the evening hunting for Pad Thai and Fried rice with Mango.
 
 ### Day 5 : Bangkok Baby!
-### Day 6 : Golden Temple, Weekend Market & China Town
+The next morning was mostly about grabbing a quick breakfast nearby and checking out of the hotel. We reached Krabi airport 3-4 hours earlier than boarding time and just chilled at the airport. 
+
+We got into a shared bus from the airport to reach our hotel. But things did not go exactly as we planned as we were re-routed multiple times and we felt like we were going farther and farther away from the hotel. Suddenly, everyone also got down and we were the only two people left on the bus. As we were starting to panic a bit, we had a pleasant surprise. We had our faces glued to the glass window of our bus when we saw a huge convoy of cars pass by. Turns out, the whole re-routing and traffic control was due to the King of Thailand passing by. I swear I saw the King wave at me from the car, but my wife thinks otherwise!
+
+As we reached our hotel around 8 PM, we contemplated hard if we wanted to just call it a night or go somewhere. We decided to push ourselves a bit and went to Khao San Road, the place famous for serving unique meat and other cuisines. I tried 
+some food that I had never eaten before in my life and we had a fun evening before we got back.
+
+### Day 6 : Grand Palace, Chatuchak Market & China Town
+We took a Tuk Tuk (basically our auto) to the Grand Palace, a set of buildings with beautiful architecture, where older Kings of Thailand were said to reside. It was also the home to the famous Emerald Buddha, which to be honest wasn't that amazing to see in person. It was really sunny, so we had some ice-cream and chicken for the lunch.
+
+We spent the evening by shopping in Chatuchak Weekend Market. We bought some souvenirs for us and close family in the market. The price wasn't exactly cheap either. We used the MRT to commute between Wat Mangkon and Chatuchak Park stations. We had some fried rice, Thai noodles and sweet corn to cap off the night. 
+
 ### Day 7 : Bye Bye Thailand
+It was finally the time to bid farewell to Thailand. With a tired body, a relaxed mind and a lot of memories we reached the Bangkok airport for our return flight to Bengaluru. We reached home around midnight. We already missed the sunsets and Thai noodles as we were looking at the photos and reminiscing about the trip, just like I was doing when I wrote this blog. 

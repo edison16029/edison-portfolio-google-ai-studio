@@ -13,23 +13,48 @@ const Home: React.FC = () => {
       description: 'Deep dive into backend architecture', 
       path: '/projects', 
       color: theme.colors.primary.split('-')[0],
-      enabled: FEATURES.projects 
+      enabled: FEATURES.projects,
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      )
     },
     { 
       title: 'Travel', 
       description: 'Exploring the world one port at a time', 
       path: '/travel', 
       color: 'rose',
-      enabled: FEATURES.travel 
+      enabled: FEATURES.travel,
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
     },
     { 
       title: 'Blog', 
       description: 'Tech deep dives and life updates', 
       path: '/blog', 
       color: 'amber',
-      enabled: FEATURES.blog 
+      enabled: FEATURES.blog,
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      )
     },
   ].filter(card => card.enabled);
+
+  // Determine grid columns and width based on number of items to ensure centering
+  let gridClassName = "grid grid-cols-1 gap-6";
+  if (menuCards.length === 1) {
+    gridClassName += " max-w-md mx-auto";
+  } else if (menuCards.length === 2) {
+    gridClassName += " md:grid-cols-2 max-w-4xl mx-auto";
+  } else {
+    gridClassName += " md:grid-cols-3";
+  }
 
   return (
     <div className="pb-12">
@@ -71,42 +96,21 @@ const Home: React.FC = () => {
           <h2 className={theme.styles.heading}>About Me</h2>
           <div className="mt-6 space-y-6 text-gray-600 leading-relaxed">
             <p>
-            I’m a Software Engineer at Google, based in Bengaluru. 
-            I work mostly on backend systems — the kind of things users 
-            don’t see but definitely notice when they break. 
-            I enjoy understanding how pieces fit together and building systems that don’t need constant babysitting.
+            I’m a Software Engineer at Google, based in Bengaluru, building backend systems that power products used by millions of people. Over the years, I’ve owned features end-to-end from ambiguous problem statements to design docs, production rollouts, and post-launch reliability. I care about shipping things that last, systems that scale, code that reads well six months later, and decisions that don’t need to be undone every quarter.
             </p>
+            
             <p>
-            I’m not the “move fast and rewrite later” type. 
-            I prefer thinking things through, asking a few annoying “why” questions, 
-            and then building something that holds up. Clean code, simple design, 
-            fewer surprises — that’s usually the goal.
-            </p>
-            <p> 
-            Outside of work, I occasionally go to the gym (and consistently think about going more). 
-            I read books in bursts, tell myself I’ll read daily, and then repeat the cycle. 
-            I have done a few treks, visited few places, and have a growing list of countries I want to explore someday.
-            </p>
-            <p> 
-            Still figuring things out — in tech, in fitness, in life — but enjoying the process.  
+            Outside of work, mostly I try to spend some quality time with my family. I also try to stay consistent at the gym (with mixed success), follow the NBA and cricket closely, and enjoy discovering new places to eat. I’ve done a few treks, explored a handful of cities, and keep a growing list of countries I’d like to visit.
             </p>
 
-            <div className="pt-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">Currently, I’m split between two high-stakes worlds:</h3>
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <span className={`font-bold text-${theme.colors.primary} shrink-0`}>By day:</span>
-                  <span>Engineering the future of backend systems and getting hands-on with the latest in AI agent development. I enjoy the challenge of building autonomous agents that can navigate the same lack of "direct solutions" I face in my daily codebases.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="font-bold text-rose-500 shrink-0">By night:</span>
-                  <span>Navigating my newest (and most complex) deployment yet—being a parent to a newborn. I’ve found that debugging a distributed system and decoding a 3 AM cry require a surprisingly similar set of analytical skills.</span>
-                </li>
-              </ul>
-            </div>
+            <p>
+            Still learning about systems, about discipline, about life, but enjoying the process of getting a little better each year.
+            </p>
+
+            
 
             <div className="pt-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">When I’m not architecting perfection or navigating the chaos of new parenthood, you can find me:</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">When I’m not working or navigating the chaos of new parenthood, you can find me:</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
                   <span className="text-2xl">🏀</span>
@@ -114,7 +118,7 @@ const Home: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
                   <span className="text-2xl">🎮</span>
-                  <span>Recalibrating with Age of Empires 4 or Valorant.</span>
+                  <span>Relaxing with Age of Empires 4 or Valorant.</span>
                 </li>
                 <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
                   <span className="text-2xl">📺</span>
@@ -128,20 +132,25 @@ const Home: React.FC = () => {
         {/* Menu Cards */}
         {menuCards.length > 0 && (
           <section className="mt-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className={gridClassName}>
               {menuCards.map((card) => (
                 <button 
                   key={card.title} 
                   onClick={() => navigate(card.path)}
-                  className={`${theme.styles.card} p-6 flex flex-col items-center text-center group active:scale-95 w-full`}
+                  className={`${theme.styles.card} relative p-8 flex flex-col items-center text-center group active:scale-95 w-full hover:border-${card.color}-200 transition-all duration-300`}
                 >
-                  <div className={`w-12 h-12 bg-${card.color}-100 text-${card.color}-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                  <div className={`w-16 h-16 bg-${card.color}-50 text-${card.color}-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-sm`}>
+                    {card.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">{card.title}</h3>
-                  <p className="mt-2 text-sm text-gray-500">{card.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
+                  <p className="text-gray-500 leading-relaxed mb-8">{card.description}</p>
+                  
+                  {/* Arrow Indicator */}
+                  <div className={`mt-auto w-10 h-10 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center group-hover:bg-${card.color}-600 group-hover:text-white transition-all duration-300`}>
+                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                     </svg>
+                  </div>
                 </button>
               ))}
             </div>
