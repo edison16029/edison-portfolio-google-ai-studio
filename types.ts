@@ -27,5 +27,5 @@ export interface BlogPost {
   readTime: string;
   image: string;
   category: string;
-  contentPath: string;
+  Content: React.ComponentType;
 }

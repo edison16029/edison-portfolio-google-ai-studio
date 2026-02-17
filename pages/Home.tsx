@@ -8,10 +8,10 @@ const Home: React.FC = () => {
 
   // Filter menu cards based on feature flags
   const menuCards = [
-    { 
-      title: 'Projects', 
-      description: 'Deep dive into backend architecture', 
-      path: '/projects', 
+    {
+      title: 'Projects',
+      description: 'Deep dive into backend architecture',
+      path: '/projects',
       color: theme.colors.primary.split('-')[0],
       enabled: FEATURES.projects,
       icon: (
@@ -20,10 +20,10 @@ const Home: React.FC = () => {
         </svg>
       )
     },
-    { 
-      title: 'Travel', 
-      description: 'Exploring the world one port at a time', 
-      path: '/travel', 
+    {
+      title: 'Travel',
+      description: 'Exploring the world one port at a time',
+      path: '/travel',
       color: 'rose',
       enabled: FEATURES.travel,
       icon: (
@@ -32,10 +32,10 @@ const Home: React.FC = () => {
         </svg>
       )
     },
-    { 
-      title: 'Blog', 
-      description: 'Tech deep dives and life updates', 
-      path: '/blog', 
+    {
+      title: 'Blog',
+      description: 'Tech deep dives and life updates',
+      path: '/blog',
       color: 'amber',
       enabled: FEATURES.blog,
       icon: (
@@ -60,17 +60,25 @@ const Home: React.FC = () => {
     <div className="pb-12">
       {/* Top-view tech workspace cover photo */}
       <div className="relative h-48 md:h-64 bg-gray-200">
-        <img 
-          src="https://plus.unsplash.com/premium_photo-1661775756810-82dbd209fc95?q=80&w=1354" 
-          alt="Software Engineer Desk Top View" 
+        <img
+          src="https://plus.unsplash.com/premium_photo-1661775756810-82dbd209fc95?q=80&w=1354"
+          alt="Software Engineer Desk Top View"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
         <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
-            <img 
-              src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2" 
-              alt="Profile" 
+            <img
+              // src="https://drive.google.com/file/d/1N0Zgv1WRJO26FbyaTgAUw2zdVMukPimY/view?usp=drive_link"
+              src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2"
+              alt="Profile1"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
+            <img
+              src="https://drive.google.com/thumbnail?id=1N0Zgv1WRJO26FbyaTgAUw2zdVMukPimY"
+              alt="Profi2"
               className="w-full h-full object-cover"
             />
           </div>
@@ -96,18 +104,18 @@ const Home: React.FC = () => {
           <h2 className={theme.styles.heading}>About Me</h2>
           <div className="mt-6 space-y-6 text-gray-600 leading-relaxed">
             <p>
-            I’m a Software Engineer at Google, based in Bengaluru, building backend systems that power products used by millions of people. Over the years, I’ve owned features end-to-end from ambiguous problem statements to design docs, production rollouts, and post-launch reliability. I care about shipping things that last, systems that scale, code that reads well six months later, and decisions that don’t need to be undone every quarter.
-            </p>
-            
-            <p>
-            Outside of work, mostly I try to spend some quality time with my family. I also try to stay consistent at the gym (with mixed success), follow the NBA and cricket closely, and enjoy discovering new places to eat. I’ve done a few treks, explored a handful of cities, and keep a growing list of countries I’d like to visit.
+              I’m a Software Engineer at Google, based in Bengaluru, building backend systems that power products used by millions of people. Over the years, I’ve owned features end-to-end from ambiguous problem statements to design docs, production rollouts, and post-launch reliability. I care about shipping things that last, systems that scale, code that reads well six months later, and decisions that don’t need to be undone every quarter.
             </p>
 
             <p>
-            Still learning about systems, about discipline, about life, but enjoying the process of getting a little better each year.
+              Outside of work, mostly I try to spend some quality time with my family. I also try to stay consistent at the gym (with mixed success), follow the NBA and cricket closely, and enjoy discovering new places to eat. I’ve done a few treks, explored a handful of cities, and keep a growing list of countries I’d like to visit.
             </p>
 
-            
+            <p>
+              Still learning about systems, about discipline, about life, but enjoying the process of getting a little better each year.
+            </p>
+
+
 
             <div className="pt-4">
               <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">When I’m not working or navigating the chaos of new parenthood, you can find me:</h3>
@@ -134,8 +142,8 @@ const Home: React.FC = () => {
           <section className="mt-20">
             <div className={gridClassName}>
               {menuCards.map((card) => (
-                <button 
-                  key={card.title} 
+                <button
+                  key={card.title}
                   onClick={() => navigate(card.path)}
                   className={`${theme.styles.card} relative p-8 flex flex-col items-center text-center group active:scale-95 w-full hover:border-${card.color}-200 transition-all duration-300`}
                 >
@@ -144,12 +152,12 @@ const Home: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
                   <p className="text-gray-500 leading-relaxed mb-8">{card.description}</p>
-                  
+
                   {/* Arrow Indicator */}
                   <div className={`mt-auto w-10 h-10 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center group-hover:bg-${card.color}-600 group-hover:text-white transition-all duration-300`}>
-                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                     </svg>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                   </div>
                 </button>
               ))}

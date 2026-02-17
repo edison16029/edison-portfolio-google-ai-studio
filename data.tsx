@@ -181,6 +181,8 @@ export const TRAVEL_DATA: TravelEntry[] = [
   { id: 'o6', country: 'Brazil', city: 'Rio de Janeiro', date: 'Future', status: 'bucket-list', category: 'other', image: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&q=80&w=400', notes: 'Lively festivals and iconic landmarks.' },
 ];
 
+import ThailandTrip from './src/blog/honeymoon-thailand.mdx';
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'thailand-trip-2024',
@@ -188,9 +190,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'A personal chronicle of our unforgettable honeymoon journey through Phuket, Krabi, and Bangkok in October 2024.',
     date: 'Feb 10, 2026',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800',
+    image: 'https://res.cloudinary.com/dgmnxilzh/image/upload/v1771353084/1._Cover_Photo_ondzkm.jpg',
     category: 'Travel',
-    contentPath: 'blog/honeymoon-thailand.md'
+    Content: ThailandTrip
   },
 
 ];
