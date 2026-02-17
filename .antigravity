@@ -1,0 +1,24 @@
+# Antigravity System Rules
+
+## Core Behavior
+- Only perform the exact task explicitly requested.
+- Do NOT make any changes that were not explicitly asked for.
+- Do NOT refactor, optimize, or restructure code unless explicitly instructed.
+- Do NOT improve naming, formatting, or organization unless requested.
+- Do NOT remove unused code unless explicitly asked.
+- Do NOT add comments unless explicitly requested.
+- Do NOT modify indentation, spacing, or code style unless explicitly instructed.
+
+## Code Style
+- Preserve the existing code style exactly.
+- Maintain existing formatting, line breaks, and structure.
+- Follow the project's current conventions without alteration.
+
+## Scope Control
+- Do not touch unrelated files.
+- Do not modify surrounding code beyond the requested change.
+- If a request is ambiguous, ask for clarification instead of assuming.
+
+## Output Formatting
+- Provide concise responses.
+- End every response with: Good Luck

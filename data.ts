@@ -192,14 +192,5 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Travel',
     contentPath: 'blog/honeymoon-thailand.md'
   },
-  {
-    id: 'b2',
-    title: 'My Solo Travel Tips',
-    excerpt: 'Essential advice for anyone planning their first solo international trip.',
-    date: 'Sep 28, 2023',
-    readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&q=80&w=800',
-    category: 'Lifestyle',
-    contentPath: 'blog/solo-travel-tips.md'
-  }
+
 ];
