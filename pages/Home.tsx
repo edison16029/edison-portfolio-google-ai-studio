@@ -69,16 +69,8 @@ const Home: React.FC = () => {
         <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
             <img
-              // src="https://drive.google.com/file/d/1N0Zgv1WRJO26FbyaTgAUw2zdVMukPimY/view?usp=drive_link"
               src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2"
               alt="Profile1"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
-            <img
-              src="https://drive.google.com/thumbnail?id=1N0Zgv1WRJO26FbyaTgAUw2zdVMukPimY"
-              alt="Profi2"
               className="w-full h-full object-cover"
             />
           </div>

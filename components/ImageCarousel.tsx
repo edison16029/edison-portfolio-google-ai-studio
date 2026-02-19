@@ -9,9 +9,16 @@ interface CarouselImage {
 interface ImageCarouselProps {
     images: CarouselImage[];
     className?: string;
+    aspectRatio?: string;
+    maxWidth?: string;
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className = "" }) => {
+const ImageCarousel: React.FC<ImageCarouselProps> = ({
+    images,
+    className = "",
+    aspectRatio = "aspect-[4/3]",
+    maxWidth = "max-w-full"
+}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     if (!images || images.length === 0) return null;
@@ -29,15 +36,15 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, className = "" })
     };
 
     return (
-        <figure className={`my-8 relative group ${className}`}>
+        <figure className={`my-8 relative group ${maxWidth} mx-auto ${className}`}>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative bg-gray-50">
 
                 {/* Main Image */}
-                <div className="relative aspect-[4/3] w-full">
+                <div className={`relative ${aspectRatio} w-full`}>
                     <img
                         src={images[currentIndex].src}
                         alt={images[currentIndex].alt}
-                        className="w-full h-full object-contain transition-opacity duration-300"
+                        className="w-full h-full object-contain transition-all duration-500 hover:scale-[1.02] active:scale-[1.02]"
                         loading="lazy"
                         referrerPolicy="no-referrer"
                     />
