@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edison Moni | Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2360a5fa'/%3E%3Ctext x='50%25' y='50%25' dy='.1em' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='22' fill='white'%3EE%3C/text%3E%3C/svg%3E" />
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style type="text/tailwindcss">
-      @layer base {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Edison Moni – Software Engineer at Google based in Bengaluru. Building scalable backend systems, exploring the world, and sharing insights on technology and life." />
+  <title>Edison Moni | Portfolio</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <style type="text/tailwindcss">
+    @layer base {
         body {
           @apply bg-gray-50 text-gray-900;
           font-family: 'Inter', sans-serif;
@@ -46,47 +52,51 @@
 }
 </script>
 </head>
-  <body>
-    <!-- Helpful overlay for users who open the file directly via file:// -->
-    <div id="protocol-warning" class="font-sans">
-      <div class="max-w-md mx-auto p-8 bg-white rounded-3xl shadow-2xl border border-gray-100">
-        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
-        </div>
-        <h1 class="text-2xl font-bold text-gray-900 mb-4">Local Server Required</h1>
-        <p class="text-gray-600 mb-8">
-          Modern web apps using <strong>TypeScript</strong> and <strong>React</strong> cannot be run by opening the file directly in your browser.
-        </p>
-        <div class="text-left bg-gray-900 rounded-2xl p-6 font-mono text-sm text-indigo-300 space-y-2 mb-8 shadow-inner">
-          <p><span class="text-gray-500"># 1. Open your terminal in this folder</span></p>
-          <p><span class="text-emerald-400">npm</span> install</p>
-          <p class="pt-2"><span class="text-gray-500"># 2. Start the local server</span></p>
-          <p><span class="text-emerald-400">npm</span> run dev</p>
-        </div>
-        <p class="text-sm text-gray-400">
-          Once started, the website will open at <code class="bg-gray-100 px-1 rounded">http://localhost:3000</code>
-        </p>
+
+<body>
+  <!-- Helpful overlay for users who open the file directly via file:// -->
+  <div id="protocol-warning" class="font-sans">
+    <div class="max-w-md mx-auto p-8 bg-white rounded-3xl shadow-2xl border border-gray-100">
+      <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
       </div>
+      <h1 class="text-2xl font-bold text-gray-900 mb-4">Local Server Required</h1>
+      <p class="text-gray-600 mb-8">
+        Modern web apps using <strong>TypeScript</strong> and <strong>React</strong> cannot be run by opening the file
+        directly in your browser.
+      </p>
+      <div class="text-left bg-gray-900 rounded-2xl p-6 font-mono text-sm text-indigo-300 space-y-2 mb-8 shadow-inner">
+        <p><span class="text-gray-500"># 1. Open your terminal in this folder</span></p>
+        <p><span class="text-emerald-400">npm</span> install</p>
+        <p class="pt-2"><span class="text-gray-500"># 2. Start the local server</span></p>
+        <p><span class="text-emerald-400">npm</span> run dev</p>
+      </div>
+      <p class="text-sm text-gray-400">
+        Once started, the website will open at <code class="bg-gray-100 px-1 rounded">http://localhost:3000</code>
+      </p>
     </div>
+  </div>
 
-    <div id="root"></div>
+  <div id="root"></div>
 
-    <!-- Hidden form for Netlify detection -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
+  <!-- Hidden form for Netlify detection -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
 
-    <script type="module">
-      // Check for file protocol and show warning
-      if (window.location.protocol === 'file:') {
-        document.getElementById('protocol-warning').style.display = 'flex';
-      }
-    </script>
-    <!-- Entry point for Vite -->
-    <script type="module" src="/index.tsx"></script>
-  </body>
+  <script type="module">
+    // Check for file protocol and show warning
+    if (window.location.protocol === 'file:') {
+      document.getElementById('protocol-warning').style.display = 'flex';
+    }
+  </script>
+  <!-- Entry point for Vite -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
