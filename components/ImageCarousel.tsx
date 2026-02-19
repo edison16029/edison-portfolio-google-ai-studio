@@ -16,10 +16,15 @@ interface ImageCarouselProps {
 const ImageCarousel: React.FC<ImageCarouselProps> = ({
     images,
     className = "",
-    aspectRatio = "aspect-[4/3]",
+    aspectRatio = "aspect-square",
     maxWidth = "max-w-full"
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    // Minimum swipe distance (in px)
+    const minSwipeDistance = 50;
 
     if (!images || images.length === 0) return null;
 
@@ -35,16 +40,54 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         setCurrentIndex(index);
     };
 
+    const onTouchStart = (e: React.TouchEvent) => {
+        if (images.length <= 1) return;
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        if (images.length <= 1) return;
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (images.length <= 1 || !touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            nextSlide();
+        } else if (isRightSwipe) {
+            prevSlide();
+        }
+    };
+
     return (
         <figure className={`my-8 relative group ${maxWidth} mx-auto ${className}`}>
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative bg-gray-50">
+            <div
+                className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 relative bg-gray-50 cursor-grab active:cursor-grabbing"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+            >
 
-                {/* Main Image */}
-                <div className={`relative ${aspectRatio} w-full`}>
+                {/* Image Container with Centering and Blurred Background */}
+                <div className={`relative ${aspectRatio} w-full flex items-center justify-center overflow-hidden`}>
+                    {/* Background Blur Effect */}
+                    <div
+                        className="absolute inset-0 w-full h-full bg-cover bg-center blur-2xl opacity-20 scale-110 pointer-events-none"
+                        style={{ backgroundImage: `url(${images[currentIndex].src})` }}
+                        aria-hidden="true"
+                    />
+
+                    {/* Main Image */}
                     <img
                         src={images[currentIndex].src}
                         alt={images[currentIndex].alt}
-                        className="w-full h-full object-contain transition-all duration-500 hover:scale-[1.02] active:scale-[1.02]"
+                        className="relative z-10 max-w-full max-h-full object-contain transition-all duration-500 hover:scale-[1.02] active:scale-[1.02] pointer-events-none"
                         loading="lazy"
                         referrerPolicy="no-referrer"
                     />
@@ -55,7 +98,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
                     <>
                         <button
                             onClick={prevSlide}
-                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 focus:opacity-100"
+                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 focus:opacity-100 hidden md:block"
                             aria-label="Previous image"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +107,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
                         </button>
                         <button
                             onClick={nextSlide}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 focus:opacity-100"
+                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 focus:opacity-100 hidden md:block"
                             aria-label="Next image"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
