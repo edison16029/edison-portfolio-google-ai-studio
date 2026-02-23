@@ -100,7 +100,7 @@ const Home: React.FC = () => {
             </p>
 
             <p>
-              Outside of work, mostly I try to spend some quality time with my family. I also try to stay consistent at the gym (with mixed success), follow the NBA and cricket closely, and enjoy discovering new places to eat. I’ve done a few treks, explored a handful of cities, and keep a growing list of countries I’d like to visit.
+              Outside of work, I cherish quality time with my family as we navigate the world of new parenthood together. I’m a passionate sports fan, a curious traveler, and a lifelong learner—always looking for the next challenge, whether it's in the weight room or in a complex codebase.
             </p>
 
             <p>
@@ -123,6 +123,22 @@ const Home: React.FC = () => {
                 <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
                   <span className="text-2xl">📺</span>
                   <span>Rewatching Friends (because we were on a break!).</span>
+                </li>
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">🏋️‍♂️</span>
+                  <span>Trying to stay consistent at the gym (with varying levels of success).</span>
+                </li>
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">🏔️</span>
+                  <span>Manifesting my next adventure, dreaming of the Northern Lights or the Swiss Alps.</span>
+                </li>
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">📸</span>
+                  <span>Capturing sunsets and architecture (and feeling like a pro photographer for a second).</span>
+                </li>
+                <li className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl">💻</span>
+                  <span>Tinkering with GenAI or reading about backend systems that never sleep.</span>
                 </li>
               </ul>
             </div>
