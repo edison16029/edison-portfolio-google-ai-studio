@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
   // Define navigation items with their respective feature flag checks
   const navItems = [
     { name: 'Home', path: '/', enabled: true },
-    { name: 'Projects', path: '/projects', enabled: FEATURES.projects },
+    { name: 'Career', path: '/career', enabled: FEATURES.career },
     { name: 'Travel', path: '/travel', enabled: FEATURES.travel },
     { name: 'Blog', path: '/blog', enabled: FEATURES.blog },
     { name: 'Contact', path: '/contact', enabled: FEATURES.contact },
@@ -27,7 +27,7 @@ const Navigation: React.FC = () => {
       <div className={theme.styles.container}>
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link 
+            <Link
               to="/"
               className={`text-xl font-serif font-bold text-${theme.colors.primary}`}
               onClick={() => setIsMobileMenuOpen(false)}
@@ -44,11 +44,10 @@ const Navigation: React.FC = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 border-b-2 ${
-                    isActive
-                      ? `text-${theme.colors.primary} border-${theme.colors.primary}` 
+                  className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-all duration-200 border-b-2 ${isActive
+                      ? `text-${theme.colors.primary} border-${theme.colors.primary}`
                       : `text-gray-700 border-transparent hover:text-${theme.colors.primary} hover:border-${theme.colors.primary}`
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -58,7 +57,7 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex sm:hidden">
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-gray-500 hover:text-gray-600 focus:outline-none p-2"
               aria-label="Toggle menu"
@@ -88,11 +87,10 @@ const Navigation: React.FC = () => {
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block w-full text-left px-3 py-3 rounded-xl text-base font-medium transition-colors ${
-                    isActive
-                      ? `bg-gray-50 text-${theme.colors.primary}` 
+                  className={`block w-full text-left px-3 py-3 rounded-xl text-base font-medium transition-colors ${isActive
+                      ? `bg-gray-50 text-${theme.colors.primary}`
                       : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>

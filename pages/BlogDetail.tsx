@@ -51,8 +51,12 @@ const BlogDetail: React.FC = () => {
 
         <footer className="mt-20 pt-10 border-t border-gray-100">
           <div className="flex items-center gap-5">
-            <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-white shadow-md">
-              <img src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2" alt="Edison Moni" className="w-full h-full object-cover" />
+            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md">
+              <img
+                src="https://res.cloudinary.com/dgmnxilzh/image/upload/c_fill,g_face,z_0.8,w_1000,h_1000/v1771866486/VAWD9457_ren3uj.jpg"
+                alt="Edison Moni"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <div className="text-base font-bold text-gray-900">Edison Moni</div>

@@ -1,30 +1,90 @@
-import { Project, TravelEntry, BlogPost } from './types';
+import { CareerEntry, EducationEntry, SkillCategory, DevProject, TravelEntry, BlogPost } from './types';
 
-export const PROJECTS: Project[] = [
+export const CAREER_TIMELINE: CareerEntry[] = [
   {
-    id: '1',
-    title: 'AI Productivity Suite',
-    description: 'A comprehensive suite of tools powered by LLMs to automate daily workflows.',
-    longDescription: 'This project integrates multiple generative AI models to provide users with a unified workspace for drafting emails, summarizing documents, and generating code snippets. Built with React and Node.js.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
-    tags: ['React', 'TypeScript', 'Gemini API', 'Node.js'],
+    id: 'google',
+    role: 'Software Engineer (L4)',
+    company: 'Google',
+    team: 'Google Store - MyPixel',
+    location: 'Bengaluru',
+    startDate: 'Apr 2025',
+    endDate: 'Present',
+    description: 'Part of the MyPixel team within Google Store, owning the mobile application exclusive to Pixel users - designed to boost loyalty, retention, and deliver personalised promotions and offers.',
+    highlights: [
+      'Own backend features end-to-end in systems handling 300+ TPS.',
+    ],
   },
   {
-    id: '2',
-    title: 'EcoTrack Mobile App',
-    description: 'Track your carbon footprint and discover sustainable local businesses.',
-    longDescription: 'EcoTrack uses geolocation and community-driven data to help users make greener choices. It features a gamified experience to encourage sustainable habits.',
-    image: 'https://images.unsplash.com/photo-1542601906-93947f6072cb?auto=format&fit=crop&q=80&w=800',
-    tags: ['React Native', 'Firebase', 'Maps API'],
+    id: 'amazon',
+    role: 'Software Engineer 2 (L5)',
+    company: 'Amazon',
+    team: 'Prime Video',
+    location: 'Bengaluru',
+    startDate: 'Mar 2022',
+    endDate: 'Apr 2025',
+    description: 'Built scalable backend systems and internal tooling for the Prime Video live sports streaming platform.',
+    highlights: [
+      'Built reusable data pipeline infrastructure using AWS Kinesis Stream, Data Firehose, Glue Crawler, and Andes for publishing live event details to data mesh for BI integration.',
+      'Designed and implemented GenAI-powered accuracy quality checks for live sports events streamed on Prime Video.',
+      'Reduced CI/CD pipeline deployment time by 60%, cutting production rollout from 150 minutes to 60 minutes.',
+      'Reduced P90 latency of an internal tool API by 45–50% by removing unused network calls.',
+      'During on-call, identified and removed a redundant code path, reducing dependent service API calls by 90% (660k → 180k calls/week).',
+    ],
   },
   {
-    id: '3',
-    title: 'Nebula Design System',
-    description: 'An open-source UI component library for building modern accessible web apps.',
-    longDescription: 'A strictly typed, accessible component library focusing on developer experience and consistency across different platforms.',
-    image: 'https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&q=80&w=800',
-    tags: ['Design System', 'Storybook', 'Tailwind'],
-  }
+    id: 'navis',
+    role: 'Software Engineer',
+    company: 'Navis India Technologies',
+    location: 'Chennai',
+    startDate: 'Aug 2020',
+    endDate: 'Feb 2022',
+    description: 'Full-stack engineer building mobile applications and backend services for the maritime logistics industry.',
+    highlights: [
+      'Designed, deployed, and maintained a React Native mobile application for tracking Roll-On Roll-Off Cargo, achieving over 95% test coverage.',
+      'Integrated a new entity within the core product to enable inter-module communication, leveraging Java Spring and Hibernate ORM.',
+      'Created numerous APIs, modules, and internal tools to support and enhance company operations.',
+    ],
+  },
+];
+
+export const EDUCATION: EducationEntry[] = [
+  {
+    id: 'ssn',
+    degree: 'B.E. Computer Science & Engineering',
+    institution: 'Sri Sivasubramaniya Nadar (SSN) College of Engineering',
+    location: 'Chennai',
+    startYear: 2016,
+    endYear: 2020,
+  },
+];
+
+export const SKILLS: SkillCategory[] = [
+  {
+    category: 'Cloud & Infrastructure',
+    skills: ['AWS Kinesis Stream & Data Firehose', 'AWS SNS / SQS / Lambda', 'DynamoDB'],
+  },
+  {
+    category: 'Languages & Frameworks',
+    skills: ['Java', 'TypeScript', 'React', 'React Native', 'Spring Boot', 'Hibernate'],
+  },
+  {
+    category: 'AI & Data',
+    skills: ['GenAI', 'Prompt Engineering'],
+  },
+  {
+    category: 'Soft Skills',
+    skills: ['Leadership', 'Stakeholder Management', 'Problem Solving', 'Communication'],
+  },
+];
+
+export const DEV_PROJECTS: DevProject[] = [
+  {
+    id: 'portfolio',
+    title: 'Edison Portfolio',
+    description: 'Personal portfolio web app featuring an interactive career timeline, travel journal, and a blog with MDX support.',
+    tags: ['React', 'TypeScript', 'Vite', 'TailwindCSS'],
+    link: '/',
+  },
 ];
 
 export const TRAVEL_DATA: TravelEntry[] = [

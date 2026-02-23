@@ -11,12 +11,15 @@ const Travel: React.FC = () => {
 
   return (
     <div className={theme.styles.container + " py-12"}>
-      <header className="mb-16 max-w-4xl">
-        <h1 className={theme.styles.heading + " mb-8"}>Travel Chronicles</h1>
+      <header className="mb-16">
+        <h1 className={theme.styles.heading + " mb-6"}>Travel Chronicles</h1>
+        <p className="mt-2 mb-6 text-gray-500">
+          Exploring the world one city at a time - places I've been and places I dream of visiting.
+        </p>
         <div className="p-8 bg-indigo-50/50 rounded-3xl border border-indigo-100/50 relative overflow-hidden shadow-sm">
           <div className="absolute top-0 right-0 p-6 opacity-10">
             <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.19c-.32.17-.69.17-1 0l-7.97-4.19c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.19c.32-.17.69-.17 1 0l7.97 4.19c.32.17.53.5.53.88v9z"/>
+              <path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.19c-.32.17-.69.17-1 0l-7.97-4.19c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.19c.32-.17.69-.17 1 0l7.97 4.19c.32.17.53.5.53.88v9z" />
             </svg>
           </div>
           <p className="text-xl text-indigo-950 leading-relaxed font-medium font-serif italic">
@@ -39,10 +42,10 @@ const Travel: React.FC = () => {
           {visited.map(place => (
             <div key={place.id} className="group relative overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-xl flex flex-col md:flex-row min-h-[400px]">
               <div className="md:w-1/2 overflow-hidden bg-gray-100">
-                <img 
-                  src={place.image} 
-                  alt={place.country} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                <img
+                  src={place.image}
+                  alt={place.country}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
@@ -56,7 +59,7 @@ const Travel: React.FC = () => {
                 <div className="relative">
                   <div className="absolute -left-6 top-0 w-1.5 h-full bg-indigo-100 rounded-full"></div>
                   <p className="text-lg text-gray-600 leading-relaxed italic pl-2">
-                    "{place.notes}"
+                    {place.notes}
                   </p>
                 </div>
               </div>
@@ -86,14 +89,14 @@ const Travel: React.FC = () => {
             {mustSee.map(place => (
               <div key={place.id} className="group relative rounded-3xl overflow-hidden h-80 shadow-md hover:shadow-2xl transition-all duration-500">
                 <div className="absolute inset-0 bg-gray-200 animate-pulse group-hover:hidden"></div>
-                <img 
-                  src={place.image} 
-                  alt={place.country} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                <img
+                  src={place.image}
+                  alt={place.country}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8">
-                  <div className="text-[10px] font-black text-rose-400 uppercase tracking-[0.2em] mb-2">Priority Destination</div>
+
                   <h4 className="text-2xl font-bold text-white mb-2">{place.country}</h4>
                   <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     {place.city}

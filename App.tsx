@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
-import Projects from './pages/Projects.tsx';
+import Career from './pages/Career.tsx';
 import Travel from './pages/Travel.tsx';
 import Blog from './pages/Blog.tsx';
 import BlogDetail from './pages/BlogDetail.tsx';
@@ -23,11 +23,11 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          
-          {FEATURES.projects ? (
-            <Route path="/projects" element={<Projects />} />
+
+          {FEATURES.career ? (
+            <Route path="/career" element={<Career />} />
           ) : (
-            <Route path="/projects" element={<Navigate to="/" replace />} />
+            <Route path="/career" element={<Navigate to="/" replace />} />
           )}
 
           {FEATURES.travel ? (
@@ -49,7 +49,7 @@ const App: React.FC = () => {
           ) : (
             <Route path="/contact" element={<Navigate to="/" replace />} />
           )}
-          
+
           {/* Catch all redirect to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

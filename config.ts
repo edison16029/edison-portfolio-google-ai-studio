@@ -3,7 +3,7 @@
  * Set to false to completely hide the section from navigation and the home page.
  */
 export const FEATURES = {
-  projects: false,
+  career: true,
   travel: true,
   blog: true,
   contact: true,

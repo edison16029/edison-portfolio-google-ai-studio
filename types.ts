@@ -1,9 +1,34 @@
-export interface Project {
+export interface CareerEntry {
+  id: string;
+  role: string;
+  company: string;
+  team?: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  highlights: string[];
+  logo?: string;
+}
+
+export interface EducationEntry {
+  id: string;
+  degree: string;
+  institution: string;
+  location: string;
+  startYear: number;
+  endYear: number;
+}
+
+export interface SkillCategory {
+  category: string;
+  skills: string[];
+}
+
+export interface DevProject {
   id: string;
   title: string;
   description: string;
-  longDescription: string;
-  image: string;
   tags: string[];
   link?: string;
 }

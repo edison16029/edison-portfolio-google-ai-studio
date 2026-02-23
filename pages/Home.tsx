@@ -9,14 +9,14 @@ const Home: React.FC = () => {
   // Filter menu cards based on feature flags
   const menuCards = [
     {
-      title: 'Projects',
-      description: 'Deep dive into backend architecture',
-      path: '/projects',
+      title: 'Career',
+      description: 'My professional journey and experience',
+      path: '/career',
       color: theme.colors.primary.split('-')[0],
-      enabled: FEATURES.projects,
+      enabled: FEATURES.career,
       icon: (
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       )
     },
@@ -66,18 +66,18 @@ const Home: React.FC = () => {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
-        <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
+        <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0">
+          <div className="w-40 h-40 md:w-52 md:h-52 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
             <img
-              src="https://drive.google.com/thumbnail?id=11wy-7hg1NEcYH2ensCfEZpBANneWfRn2"
-              alt="Profile1"
+              src="https://res.cloudinary.com/dgmnxilzh/image/upload/c_fill,g_face,z_0.8,w_1000,h_1000/v1771866486/VAWD9457_ren3uj.jpg"
+              alt="Edison Moni"
               className="w-full h-full object-cover"
             />
           </div>
         </div>
       </div>
 
-      <div className={`${theme.styles.container} mt-16`}>
+      <div className={`${theme.styles.container} mt-20`}>
         <div className="text-center md:text-left md:ml-40">
           <h1 className="text-3xl md:text-4xl font-serif font-bold">Edison Moni</h1>
           <p className="text-gray-500 font-medium text-sm md:text-base">Software Engineer | Sports Enthusiast</p>
